@@ -27,9 +27,25 @@ function Sistema()
         return res;
     };
     
-    function Usuario(nick)
+    this.obtenerUsuarios=function()
     {
-        this.nick=nick;
+        return this.usuarios;
     }
+    
+    this.usuarioActivo=function()
+    {
+        return this.usuarios[nick]!=undefined;
+    }
+    this.numeroUsuarios=function()
+    {
+        return Object.keys(this.usuarios).length;
+    } 
+
+}
+
+
+function Usuario(nick)
+{
+    this.nick=nick;
 }
 

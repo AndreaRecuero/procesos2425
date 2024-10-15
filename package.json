@@ -1,0 +1,11 @@
+{
+  "name": "procesos2425",
+  "version": "1.0.0",
+  "description": "Proyecto Procesos de Ingeniería del Software del curso 24-25",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
