@@ -6,10 +6,10 @@ const PORT = process.env.PORT || 3000; // definimos una constante
 
 let sistema = new modelo.Sistema(); //creando la instancia
 
-// parte dedicada a directivas
+// parte dedicada a directivas             ---------------------------------------------------
 app.use(express.static(__dirname + "/"));  // definimos que el nombre del directorio de mi aplicación ('C: \Users\root\OneDrive - Universidad de Castilla-La Mancha\UCLM\Cuarto\Procesos\Proyecto\procesos2425>') la hace raíz
 
-// zona de paticiones al sistema. ENDPOINT
+// zona de paticiones al sistema. ENDPOINT ---------------------------------------------------
 app.get("/", function(request,response) // request es lo que llega, la petición y según la info que llegue, mi aplicación construye un objeto respuesta
 { 
     /*response.statusCode = 200; 
@@ -21,7 +21,14 @@ app.get("/", function(request,response) // request es lo que llega, la petición
     response.send(contenido); 
 }); 
 
-// Las apps web se quedan esperando una vez lanzadas
+app.get("/agregarUsuario/:nick",function(request,response){ 
+    let nick=request.params.nick;  // asi accedo al parámetro donde se pone nick
+    let res=sistema.agregarUsuario(nick); 
+    // OJO estoy asumiendo que agregarUsuario(nick) es una llamada asíncrona.
+    response.send(res); 
+    }); 
+
+// Las apps web se quedan esperando una vez lanzadas ---------------------------------------------------
 app.listen(PORT, () => { 
     console.log(`App está escuchando en el puerto ${PORT}`); 
     console.log('Ctrl+C para salir'); 
