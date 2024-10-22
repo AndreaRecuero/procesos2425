@@ -1,4 +1,4 @@
-const modelo=require("./modelo.js");
+const modelo = require("./modelo.js");
 
 describe('El sistema', function() 
 { 
@@ -7,7 +7,7 @@ describe('El sistema', function()
   // Se ejecuta antes de cada bloque de it.
   beforeEach(function() 
   { 
-    sistema=new modelo.Sistema() 
+    sistema = new modelo.Sistema() 
   }); 
   
   it('inicialmente no hay usuarios', function() //TEST
