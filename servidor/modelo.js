@@ -57,7 +57,7 @@ function Sistema()
     };
     
     this.obtenerUsuarios=function()
-    { //no va
+    { 
         let lista=[];
         for(usr in this.usuarios)
         {
@@ -74,7 +74,7 @@ function Sistema()
     }
 
     this.numeroUsuarios=function()
-    { // no va
+    { 
         let res={num:-1};
         res.num=Object.keys(this.usuarios).length;
         return res;
