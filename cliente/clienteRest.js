@@ -5,6 +5,7 @@ function ClienteRest()
         let cli=this; 
         $.getJSON("/agregarUsuario/"+nick,function(data)
         {
+            console.log(data);
             if (data.nick!=-1)
             { 
                 console.log("Usuario "+nick+" ha sido registrado") 

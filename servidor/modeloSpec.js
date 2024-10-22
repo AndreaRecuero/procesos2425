@@ -10,12 +10,13 @@ describe('El sistema', function()
     sistema=new modelo.Sistema() 
   }); 
   
-  it('inicialmente no hay usuarios', function() 
+  it('inicialmente no hay usuarios', function() //TEST
   { 
-    expect(sistema.numeroUsuarios().num).toEqual(0); 
+    expect(sistema.numeroUsuarios().num).toEqual(0); //ASSERTION
   }); 
 
-  it("comprobamos agregar usuario con nick", function(){
+  it("comprobamos agregar usuario con nick", function()
+  {
     // Comprobar que no hay usuarios
     expect(sistema.numeroUsuarios().num).toEqual(0); 
     // agregar un usuario concreto
@@ -26,27 +27,45 @@ describe('El sistema', function()
     expect(sistema.usuarioActivo("pepe").activo).toEqual(true); 
   });
 
-  xit("comprobamos eliminar usuario", function(){
+  it("comprobamos eliminar usuario", function()
+  {
     // comprobar que no hay usuarios
     // agregamos un usuario
+    sistema.agregarUsuario("pepe");
     // comprobamos que el usuario creado está en el sistema 
     // eliminamos el usuario
+    let res = sistema.eliminarUsuario("pepe");
     // comprobamos que el usuario creado no está en el sistema 
-
-
+    expect(res.eliminado).toEqual(true);
+    // comprobamos que no se puede volver a borrar
+    res = sistema.eliminarUsuario("pepe");
+    expect(res.eliminado).toEqual(false);
   });
 
-  xit("comprobamos usuario activo", function(){
+  it("comprobamos usuario activo", function()
+  {
     // comprobar que no hay usuarios
+    let res = sistema.usuarioActivo("pepe");
+    expect(res.activo).toEqual(false);
     // agregamos un usuario
+    sistema.agregarUsuario("pepe");
     // comprobamos que el usuario creado está en el sistema 
-    // comprobar un usuario que no existe
-
+    res = sistema.usuarioActivo("pepe");
+    expect(res.activo).toEqual(true);
   });
 
-  xit("comprobamos el método número de usuarios", function(){
+  it("comprobamos el método número de usuarios", function()
+  {
     // calcular las claves del array associativo Object.keys(sistema.usuarios)
     // comprobamos que el valor devuelto por numero de usuarios es igual al anterior
+    let res=sistema.numeroUsuarios();
+    expect(res.num).toEqual(0);
+    sistema.agregarUsuario("pepe");
+    sistema.agregarUsuario("pepa");
+    res=sistema.numeroUsuarios();
+    expect(res.num).toEqual(2);
 
   });
+
+  //xit es para que el programa sepa que es provisional y que no lo ejecute.
 });
