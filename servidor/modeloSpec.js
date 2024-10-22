@@ -23,7 +23,7 @@ describe('El sistema', function()
     // comprobar que hay 1 usuario en el sistema
     expect(sistema.numeroUsuarios()).toEqual(1);
     // comprobar que el único que hay es el que acabamos de incluir
-    //expect(sistema.usuarioActivo("pepe")).toEqual(true); //<------- no m funciona :/
+    expect(sistema.usuarioActivo("pepe").activo).toEqual(true); 
   });
 
   xit("comprobamos eliminar usuario", function(){

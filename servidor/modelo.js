@@ -16,6 +16,10 @@ function Sistema()
     this.agregarUsuario=function(nick)
     { 
         let res={"nick":-1}; 
+        if(!nick)
+        {
+            return res;
+        }
         if (!this.usuarios[nick])
         { 
             this.usuarios[nick]=new Usuario(nick); 
@@ -26,7 +30,7 @@ function Sistema()
         { 
             console.log("el nick "+nick+" está en uso");             
         } 
-            return res; 
+        return res; 
     } 
 
     this.eliminarUsuario = function(nick) {
@@ -39,7 +43,7 @@ function Sistema()
             console.log(`El usuario ${nick} no existe.`);
         }
         return res;*/
-        let res={eliminado:false};
+        let res={"eliminado":false};
         if (this.usuarios[nick])
         {
             delete this.usuarios[nick];
