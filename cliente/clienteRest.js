@@ -57,11 +57,11 @@ function ClienteRest()
         {
             if (!data.eliminado)
             {
-                console.log("Usuario "+nick+" no está eliminado")
+                console.log("Usuario "+nick+" no se pudo eliminar")
             }
             else 
             {
-                console.log("Usuario "+nick+" está eliminado")
+                console.log("Usuario "+nick+" se ha eliminado correctamente")
             }
         });
     }

@@ -12,16 +12,16 @@ describe('El sistema', function()
   
   it('inicialmente no hay usuarios', function() 
   { 
-    expect(sistema.numeroUsuarios()).toEqual(0); 
+    expect(sistema.numeroUsuarios().num).toEqual(0); 
   }); 
 
   it("comprobamos agregar usuario con nick", function(){
     // Comprobar que no hay usuarios
-    expect(sistema.numeroUsuarios()).toEqual(0); 
+    expect(sistema.numeroUsuarios().num).toEqual(0); 
     // agregar un usuario concreto
     sistema.agregarUsuario("pepe");
     // comprobar que hay 1 usuario en el sistema
-    expect(sistema.numeroUsuarios()).toEqual(1);
+    expect(sistema.numeroUsuarios().num).toEqual(1);
     // comprobar que el único que hay es el que acabamos de incluir
     expect(sistema.usuarioActivo("pepe").activo).toEqual(true); 
   });

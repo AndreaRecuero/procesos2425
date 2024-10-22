@@ -66,14 +66,11 @@ function Sistema()
         return lista;
     }
     
-    this.usuarioActivo=function()
+    this.usuarioActivo=function(nick)
     {
-        let lista=[];
-        for(usr in this.usuarios)
-        {
-            lista.push(this.usuarios[usr]);
-        }
-        return lista;
+        let res={activo:false};
+        res.activo=this.usuarios[nick]!=undefined;
+        return res;
     }
 
     this.numeroUsuarios=function()
