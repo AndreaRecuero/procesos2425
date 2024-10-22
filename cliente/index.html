@@ -3,22 +3,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sprint 1</title>
-    <script 
-        src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" 
+    <!-- Latest compiled and minified CSS -->
+    <!-- DEPENDENCES -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" 
         integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" 
         crossorigin="anonymous" 
         referrerpolicy="no-referrer">
-    </script>
+    </script>    
+    <!-- Popper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="./cliente/clienteRest.js"></script> 
+    <script src="./cliente/controlWeb.js"></script> 
+
     
     <!--<script src="./modelo.js"></script>-->
 </head>
 <body>
-    HOLA :D TODAVÍA NO HAY NADA
-    <script>
-        //sistema=new Sistema();
-        //sistema.agregarUsuario("pepe");
-        //sistema.agregarUsuario("juan");-->
-    </script>
+    <div id="agregarUsuario">
+        <script>
+            let rest = new ClienteRest();
+            let cw = new ControlWeb();
+            cw.mostrarAgregarUsuario();
+        </script>
+    </div>
 </body>
 </html>
